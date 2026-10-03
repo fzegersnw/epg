@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TV-gids</title>
+  <meta name="description" content="Overzichtelijke Nederlandse TV-gids op basis van XMLTV-gegevens van tvgids.nl">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='7' width='26' height='18' rx='3' fill='%232f6fed'/><path d='M11 2l5 5 5-5' stroke='%232f6fed' stroke-width='2' fill='none'/></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="3"/><path d="M11 2l5 5 5-5"/></svg>
+      <h1>TV-gids</h1>
+    </div>
+
+    <nav class="days" id="days" aria-label="Dag kiezen"></nav>
+
+    <div class="tools">
+      <div class="seg" role="tablist" aria-label="Weergave">
+        <button role="tab" data-view="grid" aria-selected="true">Gids</button>
+        <button role="tab" data-view="now" aria-selected="false">Nu op TV</button>
+      </div>
+      <input type="search" id="search" placeholder="Zoek programma…" aria-label="Zoek programma">
+      <button class="chip" id="favToggle" aria-pressed="false" title="Alleen favoriete zenders">★ Favorieten</button>
+      <button class="chip" id="jumpNow" title="Naar het huidige tijdstip">Nu</button>
+    </div>
+  </header>
+
+  <main>
+    <p class="status" id="status">Gids laden…</p>
+    <section id="grid" class="grid" hidden></section>
+    <section id="now" class="now" hidden></section>
+  </main>
+
+  <footer class="foot" id="foot"></footer>
+
+  <dialog id="detail">
+    <article>
+      <button class="close" aria-label="Sluiten" onclick="this.closest('dialog').close()">×</button>
+      <img id="dImg" alt="">
+      <div class="dBody">
+        <p class="dMeta" id="dMeta"></p>
+        <h2 id="dTitle"></h2>
+        <p class="dTime" id="dTime"></p>
+        <p id="dDesc"></p>
+        <a id="dLink" target="_blank" rel="noopener">Meer op tvgids.nl →</a>
+      </div>
+    </article>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

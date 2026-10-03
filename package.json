@@ -1,0 +1,17 @@
+{
+  "name": "epg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nederlandse TV-gids gebaseerd op een XMLTV-bestand gegrabd van tvgids.nl",
+  "type": "module",
+  "scripts": {
+    "grab": "node scripts/grab.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
